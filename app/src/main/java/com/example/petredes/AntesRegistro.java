@@ -16,9 +16,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class AntesRegistro extends AppCompatActivity {
 
-    ImageButton antesregistro;
+    ImageButton antesregistro, registroEmpresa, RegistroMascota, Registroveterinario;
 
-    @SuppressLint("WrongViewCast")
+    @SuppressLint({"WrongViewCast", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +28,6 @@ public class AntesRegistro extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-
-
         });
 
         antesregistro = (ImageButton) findViewById(R.id.atrasregistro);
@@ -38,9 +36,39 @@ public class AntesRegistro extends AppCompatActivity {
             public void onClick(View view) {
                 Intent decision = new Intent(AntesRegistro.this, MainActivity.class);
                 startActivity(decision);
-                Toast.makeText(AntesRegistro.this, "Redirigiendo a registro...", Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(AntesRegistro.this, "Redirigiendo a incio...", Toast.LENGTH_SHORT).show();
             }
         });
+
+        registroEmpresa = (ImageButton) findViewById(R.id.RegisEmpresa);
+        registroEmpresa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Intent decision = new Intent(AntesRegistro.this, MainActivity.class);
+                //startActivity(decision);
+                Toast.makeText(AntesRegistro.this, "Empresa...", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        RegistroMascota = (ImageButton) findViewById(R.id.RegisMascota);
+        RegistroMascota.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent decision = new Intent(AntesRegistro.this, RegistroDueno.class);
+                startActivity(decision);
+                Toast.makeText(AntesRegistro.this, "Mascota...", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Registroveterinario = (ImageButton) findViewById(R.id.RegisProfesional);
+        Registroveterinario.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Intent decision = new Intent(AntesRegistro.this, MainActivity.class);
+                //startActivity(decision);
+                Toast.makeText(AntesRegistro.this, "Profesional...", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 }

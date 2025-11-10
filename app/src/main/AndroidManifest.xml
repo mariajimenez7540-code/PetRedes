@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PetRedes">
         <activity
+            android:name=".RegistroVeterinario"
+            android:exported="false" />
+        <activity
+            android:name=".RegistroEmpresa"
+            android:exported="false" />
+        <activity
+            android:name=".RegistroDueno"
+            android:exported="false" />
+        <activity
             android:name=".AntesRegistro"
             android:exported="false" />
         <activity
